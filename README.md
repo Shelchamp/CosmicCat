@@ -17,8 +17,8 @@ CatFish is a simple 1-player game. The player controls the Cat Fish to eat small
 
 This project will use:
 
-* Vanilla JS and `jQuery` for overall structure and game logic
-* `HTML5 Canvas` and `EaselJS` for DOM manipulation and rendering
+* Vanilla JS for overall structure and game logic
+* `HTML5 Canvas` for DOM manipulation and rendering
 * `Webpack` to bundle and serve up the various scripts
 
 
@@ -34,7 +34,7 @@ Within CatFish, users are able to:
 
 ### CatFish Movement
 
-Fish are rendered using canvas and EaselJS. Fish are randomly generated with various sizes, starting positions, and velocity. User controls allow for multiple inputs.
+Fish are rendered using canvas. Fish are randomly generated with various sizes, starting positions, and velocity. User controls allow for multiple inputs.
 
 
 ### Sound
@@ -56,7 +56,7 @@ User high scores are stored in the browser's cookies using js-cookie.
 - [ ] Research which technologies will be necessary for CatFish
 
 
-**Day 1:** Dedicate day to learning more about the tools that will be used to make CatFish. Basic setup. Get `webpack` up and running. Create `webpack.config.js` and `package.json`. Review the basics of `Canvas` and `jQuery`. Learn `Easel` to see how it fits into CatFish. Goals for the day:
+**Day 1:** Dedicate day to learning more about the tools that will be used to make CatFish. Basic setup. Get `webpack` up and running. Create `webpack.config.js` and `package.json`. Review the basics of `Canvas`. Goals for the day:
 
 - [ ] Get a green bundle with `webpack`
 - [ ] Review `Canvas` and have the basic layout of the game displayed
