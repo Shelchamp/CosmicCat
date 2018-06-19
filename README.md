@@ -64,14 +64,14 @@ User high scores are stored in the browser's cookies using js-cookie.
 
 **Day 2:** Continue learning tools. Build `mainfish.js`, `movement.js`, and `game.js`. Each of these classes will create the Cat Fish, handle movement logic, and general game logic, respectively. Goals for the day:
 
-- [ ] Complete mainfish.js
+- [ ] Complete `mainfish.js`
 - [ ] Render the Cat Fish onto screen
 - [ ] Create controls to move Cat Fish around screen
 
 
-**Day 3:** Build otherfish.js, the class that will handle the logic of other fish. Add images for each of the various fish in the game.
+**Day 3:** Build `otherfish.js`, the class that will handle the logic of other fish. Add images for each of the various fish in the game.
 
-- [ ] Complete fish.js
+- [ ] Complete `fish.js`
 - [ ] Render the other fish on the Canvas screen
 - [ ] Complete the logic for the other fish and the interactions between the other fish and the Cat Fish
 
