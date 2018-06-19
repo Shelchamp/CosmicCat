@@ -7,7 +7,11 @@ class OtherFish extends MovingObject {
     this.radius = 10;
     this.height = 25;
     this.width = 25;
+    this.vel = 10;
   }
 }
+
+
+
 
 export default OtherFish;

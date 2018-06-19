@@ -1,5 +1,6 @@
 import MovingObject from './moving_object';
 import OtherFish from './other_fish';
+import Game from './game';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const canvas = document.getElementById('canny');
@@ -33,11 +34,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   let cat_fish = new MovingObject(fish);
-  let other_fish = new OtherFish(o_fish);
+  let other_fish = new OtherFish(fish);
+  let game = new Game
   cat_fish.draw(c)
   other_fish.draw(c)
-  window.cat_fish = cat_fish
-  window.other_fish = other_fish
+  window.cat_fish = cat_fish;
+  window.other_fish = other_fish;
+  window.game = game;
 
   // animate()
   // window.fish = fish
