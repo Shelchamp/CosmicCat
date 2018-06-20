@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   // window.other_fish = other_fish;
   window.game = game;
 
-  // game.allFish.forEach(fish =>{
-  //
-  //   fish.draw(c)
-  //   console.log(fish)
-  // })
+  game.allFish.forEach(fish =>{
+
+    fish.draw(c)
+    console.log(fish)
+  })
   for (let i = 0; i < 10; i++) {
     game.addFish(new OtherFish(fish))
   }
@@ -61,17 +61,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const makeFish = () => {
     let newFish = game.randomPositon(new OtherFish(fish));
     // debugger
-    newFish.draw(c)
+    game.allFish.push(newFish)
     console.log('looooo')
   }
 
 
   window.makeFish = makeFish
+
   function animate(){
     requestAnimationFrame(animate);
     c.clearRect(0, 0, 600, 400)
+
+    for (let i = 0; i < game.allFish.length; i++) {
+      game.allFish[i].update(1, c)
+    }
+    game.allFish[game.allFish.length-1].update(0, c)
   }
-  // setInterval(makeFish, 3000)
+  setInterval(makeFish, 1000)
+  animate();
 
 
 

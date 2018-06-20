@@ -11,7 +11,11 @@ class OtherFish extends MovingObject {
   }
 
   update(vel, ctx){
+    if (this.vel < 0) {
+      vel = -vel
+    }
     this.pos[0] += vel
+    this.draw(ctx)
   }
 }
 
