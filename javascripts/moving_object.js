@@ -45,6 +45,11 @@ class MovingObject {
     }
   }
 
+  bindKeyHandlers(){
+    const fish = this;
+    
+  }
+
 
 
 }

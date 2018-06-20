@@ -1,5 +1,6 @@
 import MovingObject from './moving_object';
 import OtherFish from './other_fish';
+import CatFish from './cat_fish';
 import Game from './game';
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -9,7 +10,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   let game = new Game
 
+  let cat = new CatFish(Game.CATFISH)
 
+  window.cat = cat
 
   function animate(){
     requestAnimationFrame(animate);
