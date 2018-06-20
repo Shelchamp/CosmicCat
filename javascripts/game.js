@@ -6,15 +6,19 @@ class Game {
   }
 
   addFish(fish){
-    this.allFish.push(this.randomPositon(fish))
+    this.allFish.push(this.randomize(fish))
   }
 
   drawGame(ctx){
 
   }
 
-  randomPositon(fish){
+  randomize(fish){
     let random_y = Math.random() * (Game.DIM_Y - fish.rad);
+    let num = Math.random();
+
+    fish.height = fish.height * 0.25 + (fish.height * 0.75 * num)
+    fish.width = fish.width * 0.25 + (fish.width * 0.75 * num)
 
     switch (Math.round(Math.random())) {
 
@@ -37,7 +41,7 @@ class Game {
 
 }
 
-Game.DIM_X = 600;
+Game.DIM_X = 700;
 Game.DIM_Y = 400;
 Game.NUM_ASTEROIDS;
 

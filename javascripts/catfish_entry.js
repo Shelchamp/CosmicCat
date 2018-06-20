@@ -17,16 +17,26 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // y: 200,
     // vx: 10,
     // yx: 10,
-    pos: [300, 200],
-    vel: [10, 10],
-    rad: 20,
+    pos: [200, 200],
+    vel: 1,
+    rad: 25,
     height: 50,
     width: 50
   }
 
-  let o_fish = {
-    pos: [100, 100]
+  let fish2 = {
+    // x: 200,
+    // y: 200,
+    // vx: 10,
+    // yx: 10,
+    pos: [400, 400],
+    vel: 1,
+    rad: 25,
+    height: 50,
+    width: 50
   }
+
+
 
   function animate(){
     requestAnimationFrame(animate);
@@ -34,19 +44,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   let cat_fish = new MovingObject(fish);
-  let other_fish = new OtherFish(fish);
+  let other_fish = new OtherFish(fish2);
   let game = new Game
 
   // cat_fish.draw(c)
   // other_fish.draw(c)
-  // window.cat_fish = cat_fish;
-  // window.other_fish = other_fish;
+  window.cat_fish = cat_fish;
+  window.other_fish = other_fish;
   window.game = game;
 
   game.allFish.forEach(fish =>{
 
     fish.draw(c)
-    console.log(fish)
   })
   for (let i = 0; i < 10; i++) {
     game.addFish(new OtherFish(fish))
@@ -55,14 +64,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
   game.allFish.forEach(fish =>{
 
     fish.draw(c)
-    console.log('hi')
   })
 
   const makeFish = () => {
-    let newFish = game.randomPositon(new OtherFish(fish));
-    // debugger
+    let newFish = game.randomize(new OtherFish(fish));
+
     game.allFish.push(newFish)
-    console.log('looooo')
+
   }
 
 
@@ -70,12 +78,30 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   function animate(){
     requestAnimationFrame(animate);
-    c.clearRect(0, 0, 600, 400)
+    c.clearRect(0, 0, 700, 400)
+
+
+
+    cat_fish.draw(c)
 
     for (let i = 0; i < game.allFish.length; i++) {
+      if (game.allFish[i].pos[0] < 0 || game.allFish[i].pos[0] > 700) {
+        game.allFish.shift()
+      }
+
+      if (game.allFish[i].isCollidedWith(cat_fish)) {
+        game.allFish.splice(i, 1);
+
+      }
+
       game.allFish[i].update(1, c)
     }
+
     game.allFish[game.allFish.length-1].update(0, c)
+
+
+
+
   }
   setInterval(makeFish, 1000)
   animate();

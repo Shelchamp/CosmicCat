@@ -3,11 +3,12 @@ import MovingObject from './moving_object'
 class OtherFish extends MovingObject {
   constructor(props){
     super(props)
+    let num = Math.random();
     this.color = "rgb(198, 85, 60)";
     this.radius = 10;
-    this.height = 25;
-    this.width = 25;
-    this.vel = 10;
+    this.height = 40
+    this.width = 40
+    this.vel = 1;
   }
 
   update(vel, ctx){
@@ -18,6 +19,8 @@ class OtherFish extends MovingObject {
     this.draw(ctx)
   }
 }
+
+OtherFish.RND_DM = Math.random()
 
 
 
