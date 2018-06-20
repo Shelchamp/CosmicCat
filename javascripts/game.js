@@ -1,3 +1,5 @@
+
+
 class Game {
   constructor(){
     this.allFish = []
@@ -7,8 +9,12 @@ class Game {
     this.allFish.push(this.randomPositon(fish))
   }
 
+  drawGame(ctx){
+
+  }
+
   randomPositon(fish){
-    let random_y = Math.random() * Game.DIM_Y;
+    let random_y = Math.random() * (Game.DIM_Y - fish.rad);
 
     switch (Math.round(Math.random())) {
 
@@ -18,12 +24,12 @@ class Game {
         return fish;
 
       case 1:
-        fish.pos = [Game.DIM_X, random_y];
+        fish.pos = [Game.DIM_X - fish.rad, random_y];
         fish.vel = -fish.vel;
         return fish;
 
       default:
-        fish.pos = [Game.DIM_X, random_y];
+        fish.pos = [Game.DIM_X - fish.rad, random_y];
         fish.vel = -fish.vel;
         return fish;
     }

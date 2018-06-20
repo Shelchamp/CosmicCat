@@ -36,11 +36,44 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let cat_fish = new MovingObject(fish);
   let other_fish = new OtherFish(fish);
   let game = new Game
-  cat_fish.draw(c)
-  other_fish.draw(c)
-  window.cat_fish = cat_fish;
-  window.other_fish = other_fish;
+
+  // cat_fish.draw(c)
+  // other_fish.draw(c)
+  // window.cat_fish = cat_fish;
+  // window.other_fish = other_fish;
   window.game = game;
+
+  // game.allFish.forEach(fish =>{
+  //
+  //   fish.draw(c)
+  //   console.log(fish)
+  // })
+  for (let i = 0; i < 10; i++) {
+    game.addFish(new OtherFish(fish))
+  }
+
+  game.allFish.forEach(fish =>{
+
+    fish.draw(c)
+    console.log('hi')
+  })
+
+  const makeFish = () => {
+    let newFish = game.randomPositon(new OtherFish(fish));
+    // debugger
+    newFish.draw(c)
+    console.log('looooo')
+  }
+
+
+  window.makeFish = makeFish
+  function animate(){
+    requestAnimationFrame(animate);
+    c.clearRect(0, 0, 600, 400)
+  }
+  // setInterval(makeFish, 3000)
+
+
 
   // animate()
   // window.fish = fish

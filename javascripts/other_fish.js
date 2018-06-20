@@ -9,6 +9,10 @@ class OtherFish extends MovingObject {
     this.width = 25;
     this.vel = 10;
   }
+
+  update(vel, ctx){
+    this.pos[0] += vel
+  }
 }
 
 
