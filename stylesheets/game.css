@@ -1,9 +1,9 @@
 canvas {
   border: 1px solid black;
-  height: 65%;
-  width: 50%;
+  /* height: 60%;
+  width: 60%; */
 
-  min-width: 600px;
+  min-width: 700px;
   min-height: 400px;
 
 }
