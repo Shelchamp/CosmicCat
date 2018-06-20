@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // y: 200,
     // vx: 10,
     // yx: 10,
-    pos: [200, 200],
+    pos: [350, 10],
     vel: 1,
     rad: 25,
-    height: 50,
+    height: 350,
     width: 50
   }
 

@@ -25,8 +25,8 @@ class MovingObject {
     ctx.fillRect(
       this.pos[0],
       this.pos[1],
-      this.height,
-      this.width
+      this.width,
+      this.height
     )
   }
 
@@ -41,7 +41,7 @@ class MovingObject {
     this.height + this.pos[1] > otherFish.pos[1]){
       return true
     } else {
-      return false 
+      return false
     }
   }
 
