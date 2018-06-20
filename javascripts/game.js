@@ -10,7 +10,23 @@ class Game {
   }
 
   drawGame(ctx){
+    ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    this.allFish.forEach((fish, idx) =>{
+      if (fish.pos[0] < 0 || fish.pos[0] > 700) {
+        this.allFish.shift()
+      }
 
+      if (fish.isCollidedWith(cat_fish)) {
+        this.allFish.splice(idx, 1);
+
+      }
+
+      this.allFish[idx].update(1, ctx)
+
+
+    })
+    this.allFish[this.allFish.length-1].update(0, ctx)
+    console.log(this.allFish.length)
   }
 
   randomize(fish){
