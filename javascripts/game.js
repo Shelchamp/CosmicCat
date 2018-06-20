@@ -1,22 +1,38 @@
-
+import MovingObject from './moving_object';
+import OtherFish from './other_fish';
 
 class Game {
   constructor(){
     this.allFish = []
+    this.catFish = new MovingObject(Game.CATFISH)
+    for (let i = 0; i < 10; i++) {
+      this.createFishes(new OtherFish(Game.OTHERFISH))
+
+    }
+
+    setInterval(()=>{
+      this.addFish()
+    }, 1000)
   }
 
-  addFish(fish){
+  createFishes(fish){
     this.allFish.push(this.randomize(fish))
+  }
+
+  addFish(){
+    let newFish = this.randomize(new OtherFish(Game.OTHERFISH))
+    this.allFish.push(newFish)
   }
 
   drawGame(ctx){
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    this.catFish.draw(ctx);
     this.allFish.forEach((fish, idx) =>{
       if (fish.pos[0] < 0 || fish.pos[0] > 700) {
         this.allFish.shift()
       }
 
-      if (fish.isCollidedWith(cat_fish)) {
+      if (fish.isCollidedWith(this.catFish)) {
         this.allFish.splice(idx, 1);
 
       }
@@ -26,7 +42,7 @@ class Game {
 
     })
     this.allFish[this.allFish.length-1].update(0, ctx)
-    console.log(this.allFish.length)
+    // console.log(this.allFish.length)
   }
 
   randomize(fish){
@@ -60,6 +76,21 @@ class Game {
 Game.DIM_X = 700;
 Game.DIM_Y = 400;
 Game.NUM_ASTEROIDS;
+Game.CATFISH = {
+  pos: [300, 150],
+  vel: 1,
+  rad: 25,
+  height: 100,
+  width: 50
+}
+
+Game.OTHERFISH = {
+  pos: [400, 400],
+  vel: 1,
+  rad: 25,
+  height: 50,
+  width: 50
+}
 
 
 export default Game;
