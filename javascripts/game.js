@@ -4,6 +4,7 @@ import CatFish from './cat_fish';
 
 class Game {
   constructor(){
+    console.log("utduytccutcurtcutc");
     this.allFish = []
     this.catFish = new CatFish(Game.CATFISH)
 
@@ -50,7 +51,7 @@ class Game {
         if (fish.height < this.catFish.height) {
           this.catFish.height += 2;
           this.catFish.width += 2;
-        } 
+        }
         this.allFish.splice(idx, 1);
       }
 
