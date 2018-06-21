@@ -17,7 +17,11 @@ class Game {
     // CREATE A FISH EVERYTHING SECOND
     setInterval(()=>{
       this.addFish()
-    }, 1000)
+    }, 500)
+
+
+
+
 
     //constructor end
   }
@@ -57,7 +61,12 @@ class Game {
 
     })
     this.allFish[this.allFish.length-1].update(0, ctx)
-    // console.log(this.allFish.length)
+    this.wrap(this.catFish)
+    if(this.catFish.height > 100){
+      this.catFish.height = 25
+      this.catFish.width = 25
+    }
+    console.log(this.catFish.pos)
 
     // drawGame end
   }
@@ -89,6 +98,18 @@ class Game {
     }
 
     // randomize end
+  }
+
+  wrap(fish){
+    if (fish.pos[0] < -fish.width/2) {
+      fish.pos[0] = Game.DIM_X - fish.width/2
+    } else if (fish.pos[0] > Game.DIM_X - fish.width/2 ){
+      fish.pos[0] = -fish.width/2
+    } else if (fish.pos[1] < -fish.height/2){
+      fish.pos[1] = Game.DIM_Y - fish.height/2
+    } else if (fish.pos[1] > Game.DIM_Y - fish.height/2){
+      fish.pos[1] = fish.height/2
+    }
   }
 
   // class end

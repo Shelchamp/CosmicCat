@@ -4,11 +4,11 @@ class CatFish extends MovingObject {
   constructor(props){
     super(props)
     this.color = "rgb(193, 176, 23)";
-    this.pos = [300, 150]
+    this.pos = [0, 0]
     this.vel = [0,0];
-    this.radius = 25;
     this.height = 25
     this.width = 25
+    this.radius = 25;
   }
 
   update(vel, ctx){
@@ -23,18 +23,14 @@ class CatFish extends MovingObject {
   }
 
   bindKeyHandlers(){
-    // const cat_fish = this;
 
     Object.keys(CatFish.MOVES).forEach((k) =>{
       const move = CatFish.MOVES[k];
       key(k, () => {this.swim(move); })
     })
 
-    console.log('bound')
-    console.log(this)
-
-
   }
+
 
 
 
@@ -42,10 +38,15 @@ class CatFish extends MovingObject {
 }
 
 CatFish.MOVES = {
-  'w': [0, -0.5],
-  'a': [-0.5, 0],
-  's': [0, 0.5],
-  'd': [0.5, 0]
+  'w': [0, -0.25],
+  'a': [-0.25, 0],
+  's': [0, 0.25],
+  'd': [0.25, 0],
+
+  'up': [0, -0.25],
+  'left': [-0.25, 0],
+  'down': [0, 0.25],
+  'right': [0.25, 0]
 }
 
 
