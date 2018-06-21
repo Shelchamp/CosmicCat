@@ -50,7 +50,7 @@ class Game {
         if (fish.height < this.catFish.height) {
           this.catFish.height += 2;
           this.catFish.width += 2;
-        }
+        } else if (this.catFish.height < this.)
         this.allFish.splice(idx, 1);
       }
 
