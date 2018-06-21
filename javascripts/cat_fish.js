@@ -3,7 +3,7 @@ import MovingObject from './moving_object'
 class CatFish extends MovingObject {
   constructor(props){
     super(props)
-    this.color = "rgba(193, 176, 23, 1)";
+    this.color = "rgba(193, 176, 23, 0.01)";
     this.pos = [0, 0]
     this.vel = [0,0];
     this.height = 50

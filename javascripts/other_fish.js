@@ -4,7 +4,7 @@ class OtherFish extends MovingObject {
   constructor(props){
     super(props)
     let num = Math.random();
-    this.color = "rgba(198, 85, 60, 1)";
+    this.color = "rgba(198, 85, 60, 0)";
     this.radius = 37;
     this.height = 75;
     this.width = 75;
