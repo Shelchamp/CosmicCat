@@ -22,6 +22,11 @@ class MovingObject {
       this.width,
       this.height
     )
+    // ctx.beginPath();
+    // ctx.arc(this.pos[0], this.pos[1], this.radius, 0, Math.PI * 2, false)
+    // // ctx.stroke();
+    // ctx.fill();
+
     // ctx.drawImage(this.fish_pic, 0, 0)
   }
 
@@ -30,6 +35,7 @@ class MovingObject {
   }
 
   isCollidedWith(otherFish){
+    // square collision
     if(this.pos[0] < otherFish.pos[0] + otherFish.width &&
     this.pos[0] + this.width > otherFish.pos[0] &&
     this.pos[1] < otherFish.pos[1] + otherFish.height &&

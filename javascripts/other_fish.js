@@ -5,7 +5,7 @@ class OtherFish extends MovingObject {
     super(props)
     let num = Math.random();
     this.color = "rgba(198, 85, 60, 1)";
-    this.radius = 10;
+    this.radius = 37;
     this.height = 75;
     this.width = 75;
     this.vel = 1;
@@ -21,7 +21,7 @@ class OtherFish extends MovingObject {
     }
     this.pos[0] += vel
     this.draw(ctx)
-    ctx.drawImage(this.fish_pic, this.pos[0], this.pos[1], this.width, this.height)
+    ctx.drawImage(this.fish_pic, this.pos[0]-4, this.pos[1]-5, this.width+10, this.height+10)
 
   }
 }

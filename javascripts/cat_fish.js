@@ -15,6 +15,17 @@ class CatFish extends MovingObject {
     this.fish_pic = fish_pic
   }
 
+  draw(ctx){
+    ctx.fillStyle = this.color;
+    ctx.fillRect(
+      this.pos[0],
+      this.pos[1],
+      this.width,
+      this.height
+    )
+
+  }
+
   update(vel, ctx){
     this.pos[0] += vel[0]
     this.pos[1] += vel[1]
