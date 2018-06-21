@@ -3,18 +3,24 @@ import MovingObject from './moving_object'
 class CatFish extends MovingObject {
   constructor(props){
     super(props)
-    this.color = "rgb(193, 176, 23)";
+    this.color = "rgba(193, 176, 23, 1)";
     this.pos = [0, 0]
     this.vel = [0,0];
-    this.height = 25
-    this.width = 25
+    this.height = 50
+    this.width = 50
     this.radius = 25;
+
+    let fish_pic = new Image();
+    fish_pic.src="https://i.imgur.com/yIudEdm.png?1"
+    this.fish_pic = fish_pic
   }
 
   update(vel, ctx){
     this.pos[0] += vel[0]
     this.pos[1] += vel[1]
     this.draw(ctx)
+    //drawImage(image, x, y, width, height)
+    ctx.drawImage(this.fish_pic, this.pos[0]-3, this.pos[1]-5, this.width+10, this.height+10)
   }
 
   swim(move){

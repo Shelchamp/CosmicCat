@@ -62,9 +62,9 @@ class Game {
     })
     this.allFish[this.allFish.length-1].update(0, ctx)
     this.wrap(this.catFish)
-    if(this.catFish.height > 100){
-      this.catFish.height = 25
-      this.catFish.width = 25
+    if(this.catFish.height > 400){
+      this.catFish.height = 50
+      this.catFish.width = 50
     }
     console.log(this.catFish.pos)
 
@@ -108,7 +108,7 @@ class Game {
     } else if (fish.pos[1] < -fish.height/2){
       fish.pos[1] = Game.DIM_Y - fish.height/2
     } else if (fish.pos[1] > Game.DIM_Y - fish.height/2){
-      fish.pos[1] = fish.height/2
+      fish.pos[1] = -fish.height/2
     }
   }
 

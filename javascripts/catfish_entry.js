@@ -10,14 +10,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   let game = new Game
 
-  let cat = new CatFish(Game.CATFISH)
-
-  window.cat = cat
 
   function animate(){
     requestAnimationFrame(animate);
     game.drawGame(c)
-
 
   }
 

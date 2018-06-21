@@ -1,10 +1,6 @@
 
 class MovingObject {
   constructor(props){
-    // this.pos = props.x;
-    // this.y = props.y;
-    // this.xv = props.xv;
-    // this.yv = props.yv;
     this.pos = props.pos;
     this.vel = props.vel;
     this.rad = props.rad;
@@ -13,11 +9,9 @@ class MovingObject {
     this.color = "rgb(122, 71, 180)"
 
 
-    // this.update = () =>{
-    //   let c = game.context;
-    //   c.fillStyle = 'green';
-    //   c.fillRect(this.x, this.y, this.width, this.height);
-    // }
+    // fish_pic.addEventListener("load",
+    //   ()=>c.drawImage(fish_pic, 0 ,0),
+    //   false);
   }
 
   draw(ctx){
@@ -28,6 +22,7 @@ class MovingObject {
       this.width,
       this.height
     )
+    // ctx.drawImage(this.fish_pic, 0, 0)
   }
 
   move(){
@@ -47,7 +42,7 @@ class MovingObject {
 
   bindKeyHandlers(){
     const fish = this;
-    
+
   }
 
 
