@@ -4,9 +4,10 @@ import CatFish from './cat_fish';
 
 class Game {
   constructor(){
-    console.log("utduytccutcurtcutc");
+    this.started = false
     this.allFish = []
     this.catFish = new CatFish(Game.CATFISH)
+    this.meow = Game.MEOW
 
     // CREATES FIRST BATCH OF FISH
     for (let i = 0; i < Game.NUM_FISH; i++) {
@@ -27,6 +28,9 @@ class Game {
     //constructor end
   }
 
+  gameStart(){
+
+  }
 
   // ADDS A NEW FISH
   addFish(){
@@ -51,8 +55,11 @@ class Game {
         if (fish.height < this.catFish.height) {
           this.catFish.height += 2;
           this.catFish.width += 2;
+        } else if (fish.height > this.catFish.height) {
+          // window.alert("Game over!")
         }
         this.allFish.splice(idx, 1);
+        this.meow.play()
       }
 
 
@@ -140,6 +147,9 @@ Game.OTHERFISH = {
   height: 50,
   width: 50
 }
+
+Game.MEOW = new Audio();
+Game.MEOW.src = "assets/meow.mp3";
 
 
 export default Game;
