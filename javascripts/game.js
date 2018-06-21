@@ -66,7 +66,7 @@ class Game {
       this.catFish.height = 50
       this.catFish.width = 50
     }
-    console.log(this.catFish.pos)
+    
 
     // drawGame end
   }
