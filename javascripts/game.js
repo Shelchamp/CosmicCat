@@ -17,7 +17,7 @@ class Game {
     // CREATE A FISH EVERYTHING SECOND
     setInterval(()=>{
       this.addFish()
-    }, 500)
+    }, 1000)
 
 
 
@@ -66,7 +66,7 @@ class Game {
       this.catFish.height = 50
       this.catFish.width = 50
     }
-    
+
 
     // drawGame end
   }
