@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
       animate()
       start.classList.add('hideStart');
     }
-    // meow.play();
   }
 
 
