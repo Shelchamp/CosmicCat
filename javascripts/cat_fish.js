@@ -11,7 +11,7 @@ class CatFish extends MovingObject {
     this.radius = 25;
 
     let fish_pic = new Image();
-    fish_pic.src="https://i.imgur.com/yIudEdm.png?1"
+    fish_pic.src="assets/InBreadCat.png"
     this.fish_pic = fish_pic
   }
 

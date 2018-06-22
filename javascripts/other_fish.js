@@ -11,7 +11,7 @@ class OtherFish extends MovingObject {
     this.vel = 1;
 
     let fish_pic = new Image();
-    fish_pic.src="https://i.imgur.com/6AH9dwz.png"
+    fish_pic.src="assets/BulletCat.png"
     this.fish_pic = fish_pic
   }
 
