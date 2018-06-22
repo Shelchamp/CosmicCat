@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let game = new Game
 
   function animate(){
-    if (game.gameOver === false) {
+    if (game.lost === false) {
       requestAnimationFrame(animate);
       game.drawGame(c)
     }

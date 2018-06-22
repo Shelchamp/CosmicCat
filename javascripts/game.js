@@ -4,7 +4,7 @@ import CatFish from './cat_fish';
 
 class Game {
   constructor(){
-    this.gameOver = false
+    this.lost = false
     this.allFish = []
     this.catFish = new CatFish(Game.CATFISH)
     this.wow = Game.WOW
@@ -63,7 +63,7 @@ class Game {
         } else if (fish.height > this.catFish.height) {
           // window.alert("Game over!")
           this.meow.play()
-          this.gameOver = true
+          this.gameOver();
         }
       }
 
@@ -130,6 +130,10 @@ class Game {
     } else if (fish.pos[1] > Game.DIM_Y - fish.height/2){
       fish.pos[1] = -fish.height/2
     }
+  }
+
+  gameOver(){
+    this.lost = true
   }
 
   // class end

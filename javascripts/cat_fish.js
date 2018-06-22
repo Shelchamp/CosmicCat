@@ -37,6 +37,14 @@ class CatFish extends MovingObject {
   swim(move){
     this.vel[0] += move[0];
     this.vel[1] += move[1];
+
+    // changes cat facing direction based on whether
+    // pos[0] is being added or subtracted from
+    if(move[0] < 0){
+      this.fish_pic.src="assets/InBreadCatFaceLeft.png"
+    } else if (move[0] > 0){
+      this.fish_pic.src="assets/InBreadCat.png"
+    }
   }
 
   bindKeyHandlers(){

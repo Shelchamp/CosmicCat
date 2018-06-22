@@ -47,10 +47,10 @@ class MovingObject {
     }
   }
 
-  bindKeyHandlers(){
-    const fish = this;
-
-  }
+  // bindKeyHandlers(){
+  //   const fish = this;
+  //
+  // }
 
 
 
