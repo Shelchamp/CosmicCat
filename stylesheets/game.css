@@ -59,6 +59,7 @@ html{
 }
 
 .directions{
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,6 +69,7 @@ html{
 }
 
 .score{
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,6 +88,7 @@ ul, li, ol{
   /* margin: 5px; */
   padding-left: 20px;
   padding-right: 15px;
+  color: rgb(249, 226, 34)
 }
 
 li{
@@ -95,15 +98,18 @@ li{
 .title-container{
   display: flex;
   justify-content: center;
-  background: rgb(181, 153, 3)
+  background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif");
+
 }
 
 .title {
-  color: white;
+  color: rgb(228, 238, 26);
+  text-shadow: 0 0 3px #4aff00, 0 0 5px #ff1700;
+  font-family: 'Varela Round', sans-serif;
 }
 
 #links{
-  background: rgba(108, 128, 145, 1);
+  background: rgb(181, 153, 3) url("https://i.imgur.com/PkGcud9.jpg?1");
   display: flex;
   justify-content: center;
   margin: 0;
