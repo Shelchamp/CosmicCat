@@ -9,6 +9,7 @@ class MovingObject {
     this.color = "rgb(122, 71, 180)"
 
 
+
     // fish_pic.addEventListener("load",
     //   ()=>c.drawImage(fish_pic, 0 ,0),
     //   false);

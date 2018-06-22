@@ -9,6 +9,8 @@ class OtherFish extends MovingObject {
     this.height = 75;
     this.width = 75;
     this.vel = 1;
+    this.direction = 'fromRight';
+    this.rotated = false;
 
     let fish_pic = new Image();
     fish_pic.src="assets/BulletCat.png"
@@ -22,7 +24,7 @@ class OtherFish extends MovingObject {
     this.pos[0] += vel
     this.draw(ctx)
     ctx.drawImage(this.fish_pic, this.pos[0]-4, this.pos[1]-5, this.width+10, this.height+10)
-
+    
   }
 }
 

@@ -99,11 +99,14 @@ class Game {
     switch (Math.round(Math.random())) {
 
       case 0:
+      //left
         fish.pos = [0, random_y];
         fish.vel = Math.abs(fish.vel);
+        fish.fish_pic.src = "assets/BulletCatFaceRight.png"
         return fish;
 
       case 1:
+      //right
         fish.pos = [Game.DIM_X - fish.rad, random_y];
         fish.vel = -fish.vel;
         return fish;
