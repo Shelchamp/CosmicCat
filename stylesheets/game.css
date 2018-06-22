@@ -1,6 +1,6 @@
 canvas {
 
-  border: 1px solid black;
+  border: 4px groove rgb(114, 70, 222);
   display: block;
   background-image: url("https://i.imgur.com/XVyOjbm.jpg");
 
@@ -60,10 +60,29 @@ html{
 
 .directions{
   font-family: 'Varela Round', sans-serif;
-  background: rgb(146, 189, 24);
+  background: rgb(101, 111, 130);
   width: 250px;
+}
+
+.arrow-pic{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .score{
   width: 250px;
+}
+
+ul, li, ol{
+  /* margin: 5px; */
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+li{
+  text-indent: -25px;
+}
+
+h1 {
+  color: white;
 }
