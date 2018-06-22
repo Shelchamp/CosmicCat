@@ -4,13 +4,29 @@
     <meta charset="utf-8">
     <title>CatFish</title>
     <link rel="stylesheet" href="./stylesheets/game.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <script>
-    
+
     </script>
   </head>
   <body>
     <div class="canvas-container">
+      <!-- <canvas id="canny-left"  height="400" width="200"></canvas> -->
+      <div class="dir-container">
+        <ul class='directions'>
+          How to Play
+          <li>Use WASD or arrow keys to move</li>
+          <li>Eat smaller cats to gain strength and grow larger!</li>
+          <li>Avoid getting eaten by the larger cats</li>
+        </ul>
+      </div>
       <canvas id="canny" class="start" height="400" width="700"></canvas>
+      <div class="score-container">
+        <ul class="score">
+
+        </ul>
+      </div>
+      <!-- <canvas id="canny-right" height="400" width="200"></canvas> -->
     </div>
     <div class="button-container">
       <button type="button" id='start'>Start</button>

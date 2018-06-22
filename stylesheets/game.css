@@ -1,4 +1,5 @@
 canvas {
+
   border: 1px solid black;
   display: block;
   background-image: url("https://i.imgur.com/XVyOjbm.jpg");
@@ -10,10 +11,11 @@ body {
 
 html{
 
-  background: url('https://i.imgur.com/EGdby9z.jpg') no-repeat center fixed;
+  /* background: url('https://i.imgur.com/EGdby9z.jpg') no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
+  background: rgb(6, 2, 1);
   background-size: cover;
   min-height: 300px;
   min-width: 300px;
@@ -22,6 +24,7 @@ html{
 .button-container{
   display: flex;
   justify-content: center;
+  align-items: initial;
   /* position: absolute;
   z-index: 100;
   bottom: 300px;
@@ -33,11 +36,11 @@ html{
 }
 
 .canvas-container{
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
   display: flex;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 200px;
   /* height: 100vh; */
 }
 
@@ -45,6 +48,22 @@ html{
   visibility: hidden;
 }
 
-.pauseGame{
-  animation-play-state: paused;
+.dir-container{
+  display: flex;
+  align-content: flex-start;
+  min-height: 200px;
+}
+
+.score-container{
+  display: flex;
+}
+
+.directions{
+  font-family: 'Varela Round', sans-serif;
+  background: rgb(146, 189, 24);
+  width: 250px;
+}
+
+.score{
+  width: 250px;
 }

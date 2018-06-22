@@ -5,7 +5,11 @@ import Game from './game';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const canvas = document.getElementById('canny');
+  // const canvasLeft = document.getElementById('canny-left');
+  // const canvasRight = document.getElementById('canny-right');
   const c = canvas.getContext('2d');
+  // const cLeft = canvasLeft.getContext('2d');
+  // const cRight = canvasRight.getContext('2d');
   const start = document.getElementById('start');
 
 
