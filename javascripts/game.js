@@ -4,7 +4,7 @@ import CatFish from './cat_fish';
 
 class Game {
   constructor(){
-    this.started = false
+    this.gameOver = false
     this.allFish = []
     this.catFish = new CatFish(Game.CATFISH)
     this.wow = Game.WOW
@@ -22,10 +22,10 @@ class Game {
       this.addFish()
     }, 1000)
 
-    setInterval(()=>{
-      this.catFish.height -=2
-      this.catFish.width -=2
-    }, 30000)
+    // setInterval(()=>{
+    //   this.catFish.height -=2
+    //   this.catFish.width -=2
+    // }, 30000)
 
 
 
@@ -34,9 +34,6 @@ class Game {
     //constructor end
   }
 
-  gameStart(){
-
-  }
 
   // ADDS A NEW FISH
   addFish(){
@@ -53,20 +50,21 @@ class Game {
     this.catFish.update(this.catFish.vel, ctx);
 
     this.allFish.forEach((fish, idx) =>{
-      if (fish.pos[0] < 0 || fish.pos[0] > 700) {
+      if (fish.pos[0] < -fish.width || fish.pos[0] > 700) {
         this.allFish.shift()
       }
 
       if (fish.isCollidedWith(this.catFish)) {
         if (fish.height < this.catFish.height) {
+          this.wow.play()
           this.catFish.height += 2;
           this.catFish.width += 2;
-          this.wow.play()
+          this.allFish.splice(idx, 1);
         } else if (fish.height > this.catFish.height) {
           // window.alert("Game over!")
           this.meow.play()
+          this.gameOver = true
         }
-        this.allFish.splice(idx, 1);
       }
 
 

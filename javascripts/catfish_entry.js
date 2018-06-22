@@ -10,9 +10,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 
-
-
-
   function gameStart(){
     animate()
     start.classList.add('hideStart');
@@ -21,14 +18,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
   start.addEventListener("click", gameStart)
+  start.addEventListener("click", gameStart)
 
   let game = new Game
 
-
-
   function animate(){
-    requestAnimationFrame(animate);
-    game.drawGame(c)
+    if (game.gameOver === false) {
+      requestAnimationFrame(animate);
+      game.drawGame(c)
+    }
   }
 
 
