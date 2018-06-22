@@ -11,22 +11,36 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
   function gameStart(){
+
+    game.waves = setInterval(()=>{
+      game.addFish()
+    }, 1000)
+
+    game.moment = setInterval(()=>{
+      game.momentum(game.catFish)
+    }, 1000)
+
     animate()
+
     start.classList.add('hideStart');
   }
 
 
 
   start.addEventListener("click", gameStart)
-  start.addEventListener("click", gameStart)
 
   let game = new Game
 
   function animate(){
+
     if (game.lost === false) {
       requestAnimationFrame(animate);
       game.drawGame(c)
+    } else {
+        clearInterval(game.waves)
+        clearInterval(game.moment)
     }
+
   }
 
 

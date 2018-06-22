@@ -9,6 +9,9 @@ class Game {
     this.catFish = new CatFish(Game.CATFISH)
     this.wow = [Game.WOW1, Game.WOW2, Game.WOW3]
     this.meow = Game.MEOW
+    this.purr = Game.PURR
+    this.waves = null;
+    this.moment = null;
 
     // CREATES FIRST BATCH OF FISH
     for (let i = 0; i < Game.NUM_FISH; i++) {
@@ -18,13 +21,7 @@ class Game {
     this.catFish.bindKeyHandlers()
 
     // CREATE A FISH EVERYTHING SECOND
-    setInterval(()=>{
-      this.addFish()
-    }, 1000)
 
-    setInterval(()=>{
-     this.momentum(this.catFish)
-   }, 1000)
 
 
 
@@ -38,7 +35,7 @@ class Game {
   addFish(){
     let newFish = this.randomize(new OtherFish(Game.OTHERFISH))
     this.allFish.push(newFish)
-
+    // console.log("add fish")
     // addFish end
   }
 
@@ -50,7 +47,7 @@ class Game {
 
     this.allFish.forEach((fish, idx) =>{
       if (fish.pos[0] < -fish.width || fish.pos[0] > 700) {
-        this.allFish.shift()
+        this.allFish.splice(idx, 1)
       }
 
       if (fish.isCollidedWith(this.catFish)) {
@@ -90,8 +87,8 @@ class Game {
     let num = Math.random();
 
     // for squares
-    fish.height = this.catFish.height * 0.3 + (this.catFish.height * 0.3 * num)
-    fish.width = this.catFish.width * 0.3 + (this.catFish.width * 0.3 * num)
+    fish.height = this.catFish.height * 0.3 + (this.catFish.height * .5 * num)
+    fish.width = this.catFish.width * 0.3 + (this.catFish.width * .5 * num)
 
     // for circles
     fish.radius = fish.radius * 0.25 + (fish.radius * 0.75 * num)
@@ -100,7 +97,7 @@ class Game {
 
       case 0:
       //left
-        fish.pos = [0, random_y];
+        fish.pos = [0 - fish.radius, random_y];
         fish.vel = Math.abs(fish.vel);
         fish.fish_pic.src = "assets/BulletCatFaceRight.png"
         return fish;
@@ -149,8 +146,11 @@ class Game {
       fish.vel[1] += 0.5
     } else if (fish.vel[1] !== 0 && fish.vel[1] > 0) {
       fish.vel[1] -= 0.5
-    }
-    console.log("meow")
+    } // else {
+    //   this.purr.play()
+    // }
+    // console.log("momentum")
+
   }
 
   // class end
@@ -188,6 +188,9 @@ Game.WOW3.volume = 0.40;
 
 Game.MEOW = new Audio("assets/OneSecMeow.mov");
 Game.MEOW.volume = 0.35;
+
+Game.PURR = new Audio("assets/Purr.mov");
+Game.PURR.volume = 0.35;
 
 
 
