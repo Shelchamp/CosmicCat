@@ -14,10 +14,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
   function gameStart(){
-    if (game.started === false) {
-      animate()
-      start.classList.add('hideStart');
-    }
+    animate()
+    start.classList.add('hideStart');
   }
 
 
@@ -29,11 +27,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
   function animate(){
-    if (game.started === false){
-      requestAnimationFrame(animate);
-      game.drawGame(c)
-    }
-
+    requestAnimationFrame(animate);
+    game.drawGame(c)
   }
 
 

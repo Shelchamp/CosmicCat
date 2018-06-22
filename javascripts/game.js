@@ -7,6 +7,7 @@ class Game {
     this.started = false
     this.allFish = []
     this.catFish = new CatFish(Game.CATFISH)
+    this.wow = Game.WOW
     this.meow = Game.MEOW
 
     // CREATES FIRST BATCH OF FISH
@@ -20,6 +21,11 @@ class Game {
     setInterval(()=>{
       this.addFish()
     }, 1000)
+
+    setInterval(()=>{
+      this.catFish.height -=2
+      this.catFish.width -=2
+    }, 10000)
 
 
 
@@ -55,11 +61,12 @@ class Game {
         if (fish.height < this.catFish.height) {
           this.catFish.height += 2;
           this.catFish.width += 2;
+          this.wow.play()
         } else if (fish.height > this.catFish.height) {
           // window.alert("Game over!")
+          this.meow.play()
         }
         this.allFish.splice(idx, 1);
-        this.meow.play()
       }
 
 
@@ -148,8 +155,11 @@ Game.OTHERFISH = {
   width: 50
 }
 
-Game.MEOW = new Audio();
-Game.MEOW.src = "assets/meow.mp3";
+Game.WOW = new Audio("assets/WowMeow.mov");
+Game.WOW.volume = 0.35;
+
+Game.MEOW = new Audio("assets/OneSecMeow.mov");
+Game.MEOW.volume = 0.35;
 
 
 export default Game;

@@ -5,7 +5,8 @@ canvas {
 
   /* min-width: 700px;
   min-height: 400px; */
-
+  background-color: transparent;
+  background-image: url("https://i.imgur.com/XVyOjbm.jpg")
 }
 body {
   margin: 0
