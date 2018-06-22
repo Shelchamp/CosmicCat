@@ -38,17 +38,17 @@ class CatFish extends MovingObject {
 
 
     if (this.vel[0] === CatFish.MAX_V_NEG){
-      this.vel[0] = CatFish.MAX_V_NEG + .25
+      this.vel[0] = CatFish.MAX_V_NEG + .5
     } else if (this.vel[0] === CatFish.MAX_V_POS) {
-      this.vel[0] = CatFish.MAX_V_POS - 0.25
+      this.vel[0] = CatFish.MAX_V_POS - 0.5
     }else {
       this.vel[0] += move[0];
     }
 
     if (this.vel[1] === CatFish.MAX_V_NEG){
-      this.vel[1] = CatFish.MAX_V_NEG + .25
+      this.vel[1] = CatFish.MAX_V_NEG + .50
     } else if (this.vel[1] === CatFish.MAX_V_POS) {
-      this.vel[1] = CatFish.MAX_V_POS - 0.25
+      this.vel[1] = CatFish.MAX_V_POS - .50
     }{
       this.vel[1] += move[1];
 
@@ -79,15 +79,15 @@ class CatFish extends MovingObject {
 }
 
 CatFish.MOVES = {
-  'w': [0, -0.25],
-  'a': [-0.25, 0],
-  's': [0, 0.25],
-  'd': [0.25, 0],
+  'w': [0, -0.5],
+  'a': [-0.5, 0],
+  's': [0, 0.5],
+  'd': [0.5, 0],
 
-  'up': [0, -0.25],
-  'left': [-0.25, 0],
-  'down': [0, 0.25],
-  'right': [0.25, 0]
+  'up': [0, -0.5],
+  'left': [-0.5, 0],
+  'down': [0, 0.5],
+  'right': [0.5, 0]
 }
 
 CatFish.MAX_V_POS = 5;

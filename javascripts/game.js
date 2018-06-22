@@ -23,8 +23,8 @@ class Game {
     }, 1000)
 
     setInterval(()=>{
-
-    }, 1000)
+     this.momentum(this.catFish)
+   }, 1000)
 
 
 
@@ -81,7 +81,6 @@ class Game {
     }
 
     // console.log(this.catFish.vel)
-    // console.log(CatFish.MAX_V_NEG)
     // drawGame end
   }
 
@@ -143,10 +142,15 @@ class Game {
 
   momentum(fish){
     if (fish.vel[0] !== 0 && fish.vel[0] > 0) {
-      fish.vel[0] - 0.25
+      fish.vel[0] -= 0.5
     } else if (fish.vel[0] !== 0 && fish.vel[0] < 0) {
-      fish.vel[0] + 0.25
+      fish.vel[0] += 0.5
+    } else if (fish.vel[1] !== 0 && fish.vel[1] < 0) {
+      fish.vel[1] += 0.5
+    } else if (fish.vel[1] !== 0 && fish.vel[1] > 0) {
+      fish.vel[1] -= 0.5
     }
+    console.log("meow")
   }
 
   // class end
@@ -184,6 +188,7 @@ Game.WOW3.volume = 0.40;
 
 Game.MEOW = new Audio("assets/OneSecMeow.mov");
 Game.MEOW.volume = 0.35;
+
 
 
 export default Game;
