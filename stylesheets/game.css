@@ -66,6 +66,8 @@ html{
   font-family: 'Varela Round', sans-serif;
   background: rgb(101, 111, 130);
   width: 195px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .score{
@@ -76,6 +78,8 @@ html{
   font-family: 'Varela Round', sans-serif;
   background: rgb(101, 111, 130);
   width: 195px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .arrow-pic{

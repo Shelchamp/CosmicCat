@@ -61,6 +61,7 @@ class Game {
           // window.alert("Game over!")
           this.meow.play()
           this.gameOver();
+          alert("You lost! Refresh the page to play again.")
         }
       }
 
@@ -72,9 +73,8 @@ class Game {
     })
     this.allFish[this.allFish.length-1].update(0, ctx)
     this.wrap(this.catFish)
-    if(this.catFish.height > 400){
-      this.catFish.height = 50
-      this.catFish.width = 50
+    if(this.catFish.height > 350){
+      alert("Victory! You've become more powerful than anyone could imagine. Refresh page to replay.")
     }
 
     // console.log(this.catFish.vel)
@@ -87,8 +87,8 @@ class Game {
     let num = Math.random();
 
     // for squares
-    fish.height = this.catFish.height * 0.3 + (this.catFish.height * .5 * num)
-    fish.width = this.catFish.width * 0.3 + (this.catFish.width * .5 * num)
+    fish.height = this.catFish.height * 0.3 + (this.catFish.height * 1.1 * num)
+    fish.width = this.catFish.width * 0.3 + (this.catFish.width * 1.1 * num)
 
     // for circles
     fish.radius = fish.radius * 0.25 + (fish.radius * 0.75 * num)
