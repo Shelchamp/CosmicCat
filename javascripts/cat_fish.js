@@ -35,8 +35,24 @@ class CatFish extends MovingObject {
   }
 
   swim(move){
-    this.vel[0] += move[0];
-    this.vel[1] += move[1];
+
+
+    if (this.vel[0] === CatFish.MAX_V_NEG){
+      this.vel[0] = CatFish.MAX_V_NEG + .25
+    } else if (this.vel[0] === CatFish.MAX_V_POS) {
+      this.vel[0] = CatFish.MAX_V_POS - 0.25
+    }else {
+      this.vel[0] += move[0];
+    }
+
+    if (this.vel[1] === CatFish.MAX_V_NEG){
+      this.vel[1] = CatFish.MAX_V_NEG + .25
+    } else if (this.vel[1] === CatFish.MAX_V_POS) {
+      this.vel[1] = CatFish.MAX_V_POS - 0.25
+    }{
+      this.vel[1] += move[1];
+
+    }
 
     // changes cat facing direction based on whether
     // pos[0] is being added or subtracted from
@@ -74,6 +90,8 @@ CatFish.MOVES = {
   'right': [0.25, 0]
 }
 
+CatFish.MAX_V_POS = 5;
+CatFish.MAX_V_NEG = -5;
 
 
 
