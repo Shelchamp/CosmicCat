@@ -1,4 +1,4 @@
-# CatFish
+# Cat Fish
 
 [Cat Fish Live](https://shelchamp.github.io/CatFish/)
 
@@ -26,16 +26,16 @@ This project uses:
 
 ### Functionality & MVP
 
-Within CatFish, users are able to:
+Within Cat Fish, users are able to:
 
 * Start the game
 * Move the In Bread Cat using the arrow keys and WASD
 * Grow larger as they eat smaller cats
 
 
-### CatFish Movement
+### Cat Fish Movement
 
-* Cats are rendered using canvas. Fish are randomly generated with various sizes, starting positions, and velocity
+* Cats are rendered using canvas. Cats are randomly generated with various sizes, starting positions, and velocity
 * User controls allow for multiple inputs
 * Player cat has a maximum speed and will eventually come to a halt if no buttons are pressed
 
@@ -51,8 +51,13 @@ Within CatFish, users are able to:
 Features that were not implemented:
 
 * Show high scores
+* Add a greater variety of sounnds
+  * Play sound when cat reaches a particular size
+  * Have In Bread Cat purr when it is stationary
+* Allow users to Start and Restart game with button press
+* Draw Game Over screen
 * Mute audio
-* Add a variety of fish models
-* Let users pick from a number of fish to control
+* Add a variety of cat models
+* Let users pick from a number of cats to control
 * Add add volume slider
-* Let users adjust difficulty by increasing or decreasing speed of other fish
+* Let users adjust difficulty by increasing or decreasing speed of other cats
