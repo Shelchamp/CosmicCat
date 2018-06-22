@@ -54,8 +54,8 @@ class Game {
         if (fish.height < this.catFish.height) {
           // plays a random sound
           this.wow[this.randomInt(this.wow.length)].play()
-          this.catFish.height += 2;
-          this.catFish.width += 2;
+          this.catFish.height += 5;
+          this.catFish.width += 5;
           this.allFish.splice(idx, 1);
         } else if (fish.height > this.catFish.height) {
           // window.alert("Game over!")
@@ -75,6 +75,7 @@ class Game {
     this.wrap(this.catFish)
     if(this.catFish.height > 350){
       alert("Victory! You've become more powerful than anyone could imagine. Refresh page to replay.")
+      this.gameOver();
     }
 
     // console.log(this.catFish.vel)
