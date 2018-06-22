@@ -25,7 +25,7 @@ class Game {
     setInterval(()=>{
       this.catFish.height -=2
       this.catFish.width -=2
-    }, 10000)
+    }, 30000)
 
 
 
