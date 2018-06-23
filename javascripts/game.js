@@ -88,8 +88,8 @@ class Game {
     let num = Math.random();
 
     // for squares
-    fish.height = this.catFish.height * 0.3 + (this.catFish.height * 1.1 * num)
-    fish.width = this.catFish.width * 0.3 + (this.catFish.width * 1.1 * num)
+    fish.height = this.catFish.height * 0.3 + (this.catFish.height * .8 * num)
+    fish.width = this.catFish.width * 0.3 + (this.catFish.width * .8 * num)
 
     // for circles
     fish.radius = fish.radius * 0.25 + (fish.radius * 0.75 * num)
