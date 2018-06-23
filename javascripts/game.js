@@ -46,7 +46,7 @@ class Game {
     this.catFish.update(this.catFish.vel, ctx);
 
     this.allFish.forEach((fish, idx) =>{
-      if (fish.pos[0] < -fish.width || fish.pos[0] > 700) {
+      if (fish.pos[0] < -fish.width || fish.pos[0] > Game.DIM_X) {
         this.allFish.splice(idx, 1)
       }
 
@@ -73,7 +73,7 @@ class Game {
     })
     this.allFish[this.allFish.length-1].update(0, ctx)
     this.wrap(this.catFish)
-    if(this.catFish.height > 350){
+    if(this.catFish.height > 300){
       alert("Victory! You've become more powerful than anyone could imagine. Refresh page to replay.")
       this.gameOver();
     }
@@ -98,19 +98,19 @@ class Game {
 
       case 0:
       //left
-        fish.pos = [0 - fish.radius, random_y];
+        fish.pos = [0 - fish.width, random_y];
         fish.vel = Math.abs(fish.vel);
         fish.fish_pic.src = "assets/BulletCatFaceRight.png"
         return fish;
 
       case 1:
       //right
-        fish.pos = [Game.DIM_X - fish.rad, random_y];
+        fish.pos = [Game.DIM_X, random_y];
         fish.vel = -fish.vel;
         return fish;
 
       default:
-        fish.pos = [Game.DIM_X - fish.rad, random_y];
+        fish.pos = [Game.DIM_X - fish.width + 1, random_y];
         fish.vel = -fish.vel;
         return fish;
     }
@@ -119,14 +119,14 @@ class Game {
   }
 
   wrap(fish){
-    if (fish.pos[0] < -fish.width/2) {
-      fish.pos[0] = Game.DIM_X - fish.width/2
-    } else if (fish.pos[0] > Game.DIM_X - fish.width/2 ){
-      fish.pos[0] = -fish.width/2
-    } else if (fish.pos[1] < -fish.height/2){
-      fish.pos[1] = Game.DIM_Y - fish.height/2
-    } else if (fish.pos[1] > Game.DIM_Y - fish.height/2){
-      fish.pos[1] = -fish.height/2
+    if (fish.pos[0] < -fish.width) {
+      fish.pos[0] = Game.DIM_X
+    } else if (fish.pos[0] > Game.DIM_X - 1 ){
+      fish.pos[0] = -fish.width
+    } else if (fish.pos[1] < -fish.height){
+      fish.pos[1] = Game.DIM_Y
+    } else if (fish.pos[1] > Game.DIM_Y){
+      fish.pos[1] = -fish.height
     }
   }
 
