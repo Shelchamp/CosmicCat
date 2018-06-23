@@ -33,6 +33,15 @@ html{
 }
 
 #start{
+ width: 298px;
+ height: 43px;
+ font-weight: 525;
+ border-radius: 2px;
+ background-color: rgb(43, 24, 145);
+ color: #ffffff;
+ text-align: center;
+ margin: 13px 0 0 0;
+ /* font-family: $hel-light; */
 }
 
 .canvas-container{
