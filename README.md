@@ -50,8 +50,9 @@ Within Cat Fish, users are able to:
 
 Features that were not implemented:
 
+* Fix collision to be 100% visually accurate
 * Show high scores
-* Add a greater variety of sounnds
+* Add a greater variety of sounds
   * Play sound when cat reaches a particular size
   * Have In Bread Cat purr when it is stationary
 * Allow users to Start and Restart game with button press
