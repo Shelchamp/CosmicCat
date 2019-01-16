@@ -1,6 +1,7 @@
 canvas {
   border: 4px groove rgb(114, 70, 222);
   display: block;
+  /* GREEN GRASS */
   background-image: url("https://i.imgur.com/5wHwo73.png");
 }
 body {
@@ -12,6 +13,7 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; */
+  /* BLUE STAR BACKGROUND */
   background: url("https://i.imgur.com/lc3m5TQ.gif");
   /* background-size: cover; */
   min-height: 300px;
@@ -109,7 +111,7 @@ li {
 .title-container {
   display: flex;
   justify-content: center;
-  background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif");
+  /* background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif"); */
 }
 
 .title {
