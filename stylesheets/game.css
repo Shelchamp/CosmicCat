@@ -1,16 +1,13 @@
 canvas {
-
   border: 4px groove rgb(114, 70, 222);
   display: block;
   background-image: url("https://i.imgur.com/5wHwo73.png");
-
 }
 body {
-  margin: 0
+  margin: 0;
 }
 
-html{
-
+html {
   /* background: url('https://i.imgur.com/EGdby9z.jpg') no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -21,7 +18,7 @@ html{
   min-width: 300px;
 }
 
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
   align-items: initial;
@@ -29,22 +26,21 @@ html{
   z-index: 100;
   bottom: 300px;
   left: 300px; */
-
 }
 
-#start{
- width: 298px;
- height: 43px;
- font-weight: 525;
- border-radius: 2px;
- background-color: rgb(43, 24, 145);
- color: #ffffff;
- text-align: center;
- margin: 13px 0 0 0;
- /* font-family: $hel-light; */
+#start {
+  width: 298px;
+  height: 43px;
+  font-weight: 525;
+  border-radius: 2px;
+  background-color: rgb(43, 24, 145);
+  color: #ffffff;
+  text-align: center;
+  margin: 13px 0 0 0;
+  /* font-family: $hel-light; */
 }
 
-.canvas-container{
+.canvas-container {
   justify-content: space-around;
   align-items: flex-start;
   display: flex;
@@ -53,82 +49,82 @@ html{
   /* height: 100vh; */
 }
 
-.hideStart{
+.hideStart {
   visibility: hidden;
 }
 
-.dir-container{
+.dir-container {
   display: flex;
   align-content: flex-start;
   min-height: 200px;
 }
 
-.score-container{
+.score-container {
   display: flex;
 }
 
-.directions{
+.directions {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   background: rgb(101, 111, 130);
   width: 195px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.score{
+.score {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   background: rgb(101, 111, 130);
   width: 195px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.arrow-pic{
+.arrow-pic {
   height: 70px;
   max-width: 100%;
   max-height: 50%;
 }
 
-ul, li, ol{
+ul,
+li,
+ol {
   /* margin: 5px; */
   padding-left: 20px;
   padding-right: 15px;
-  color: rgb(249, 226, 34)
+  color: rgb(249, 226, 34);
 }
 
-li{
+li {
   text-indent: -25px;
 }
 
-.title-container{
+.title-container {
   display: flex;
   justify-content: center;
   background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif");
-
 }
 
 .title {
   color: rgb(228, 238, 26);
   text-shadow: 0 0 3px #4aff00, 0 0 5px #ff1700;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
-#links{
+#links {
   background: rgb(181, 153, 3) url("https://i.imgur.com/PkGcud9.jpg?1");
   display: flex;
   justify-content: center;
-  margin: 0;
+  margin: 35px 0px 0px 0px;
   padding: 0;
 }
 
-#highscore{
-
+#highscore {
 }
