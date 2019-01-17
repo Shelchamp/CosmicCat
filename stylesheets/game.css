@@ -128,5 +128,11 @@ li {
   padding: 0;
 }
 
+.dir-bullets {
+  text-indent: -22px;
+  list-style-position: inside;
+  margin-bottom: 7px;
+}
+
 #highscore {
 }
