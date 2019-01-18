@@ -20,24 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // TIMER
   const timer = document.getElementById("timer");
 
-  // This will help us stop the timer once the game ends
-
   // HOLD HIGH SCORES
-  let highScores = [];
+  let highScores = ["00:56", "01:25", "00:15", "03:16"];
 
   // LOGIC TO ADD SCORES
-  // function addScore(score, scoreContainer) {
-  //   const newScore = document.createElement("li");
-  //   newScore.innerHTML = score;
-  //   scoreContainer.appendChild(newScore);
-  // }
-
-  const newScore = document.createElement("li");
-  newScore.innerHTML = "test";
-  scoreTracker.appendChild(newScore);
+  function addScore(scores, newScore, scoreContainer = scoreTracker) {
+    scores.push(newScore);
+    let sortedScores = scores.sort();
+    sortedScores.forEach(score => {
+      const newScoreLi = document.createElement("li");
+      newScoreLi.classList.add("score");
+      newScoreLi.innerHTML = score;
+      scoreContainer.appendChild(newScoreLi);
+    });
+  }
 
   function gameStart() {
-    console.log(scoreTracker);
     game.waves = setInterval(() => {
       game.addFish();
     }, 1000);
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
     clock.timer();
     start.classList.add("hideStart");
-    scoreTracker.innerHTML = clock.time;
+    scoreTracker.innerHTML = "Top Scores";
   }
 
   start.addEventListener("click", gameStart);
@@ -66,8 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
       game.drawGame(c);
     } else {
       clock.stop = true;
+      // addScore(clock.time);
       clearInterval(game.waves);
       clearInterval(game.moment);
+      addScore(highScores, clock.time);
     }
   }
 });
