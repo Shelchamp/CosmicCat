@@ -13,12 +13,31 @@ document.addEventListener("DOMContentLoaded", () => {
   // const cRight = canvasRight.getContext('2d');
   const start = document.getElementById("start");
 
+  // GRAB THE HIGH SCORE CONTAINER
+
+  const scoreTracker = document.getElementById("score");
+
   // TIMER
   const timer = document.getElementById("timer");
 
   // This will help us stop the timer once the game ends
 
+  // HOLD HIGH SCORES
+  let highScores = [];
+
+  // LOGIC TO ADD SCORES
+  // function addScore(score, scoreContainer) {
+  //   const newScore = document.createElement("li");
+  //   newScore.innerHTML = score;
+  //   scoreContainer.appendChild(newScore);
+  // }
+
+  const newScore = document.createElement("li");
+  newScore.innerHTML = "test";
+  scoreTracker.appendChild(newScore);
+
   function gameStart() {
+    console.log(scoreTracker);
     game.waves = setInterval(() => {
       game.addFish();
     }, 1000);
@@ -30,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
     clock.timer();
     start.classList.add("hideStart");
+    scoreTracker.innerHTML = clock.time;
   }
 
   start.addEventListener("click", gameStart);

@@ -47,7 +47,7 @@ html {
   align-items: flex-start;
   display: flex;
   width: 100%;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* height: 100vh; */
 }
 
@@ -111,6 +111,7 @@ li {
 .title-container {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
   /* background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif"); */
 }
 
@@ -124,8 +125,10 @@ li {
   background: rgb(181, 153, 3) url("https://i.imgur.com/PkGcud9.jpg?1");
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 35px 0px 0px 0px;
   padding: 0;
+  height: 100px;
 }
 
 .dir-bullets {
@@ -137,6 +140,15 @@ li {
 #highscore {
 }
 
-.test {
-  width: 0px;
+.timer-container {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 50px; */
+  /* background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif"); */
+}
+
+.timer {
+  color: rgb(228, 238, 26);
+  text-shadow: 0 0 3px #4aff00, 0 0 5px #ff1700;
+  font-family: "Varela Round", sans-serif;
 }
