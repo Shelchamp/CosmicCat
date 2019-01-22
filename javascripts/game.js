@@ -1,80 +1,90 @@
-import MovingObject from './moving_object';
-import OtherFish from './other_fish';
-import CatFish from './cat_fish';
+import MovingObject from "./moving_object";
+import OtherFish from "./other_fish";
+import CatFish from "./cat_fish";
 
 class Game {
-  constructor(){
-    this.lost = false
-    this.allFish = []
-    this.catFish = new CatFish(Game.CATFISH)
-    this.wow = [Game.WOW1, Game.WOW2, Game.WOW3]
-    this.meow = Game.MEOW
-    this.purr = Game.PURR
+  constructor() {
+    this.lost = false;
+    this.allFish = [];
+    this.catFish = new CatFish(Game.CATFISH);
+    this.wow = [Game.WOW1, Game.WOW2, Game.WOW3];
+    this.meow = Game.MEOW;
+    this.purr = Game.PURR;
     this.waves = null;
     this.moment = null;
 
     // CREATES FIRST BATCH OF FISH
     for (let i = 0; i < Game.NUM_FISH; i++) {
-      this.addFish()
+      this.addFish();
     }
 
-    this.catFish.bindKeyHandlers()
+    this.catFish.bindKeyHandlers();
 
     // CREATE A FISH EVERYTHING SECOND
-
-
-
-
-
 
     //constructor end
   }
 
+  reset() {
+    this.lost = false;
+    this.allFish = [];
+    this.catFish = new CatFish(Game.CATFISH);
+    this.wow = [Game.WOW1, Game.WOW2, Game.WOW3];
+    this.meow = Game.MEOW;
+    this.purr = Game.PURR;
+    this.waves = null;
+    this.moment = null;
+
+    for (let i = 0; i < Game.NUM_FISH; i++) {
+      this.addFish();
+    }
+
+    this.catFish.bindKeyHandlers();
+  }
 
   // ADDS A NEW FISH
-  addFish(){
-    let newFish = this.randomize(new OtherFish(Game.OTHERFISH))
-    this.allFish.push(newFish)
+  addFish() {
+    let newFish = this.randomize(new OtherFish(Game.OTHERFISH));
+    this.allFish.push(newFish);
     // console.log("add fish")
     // addFish end
   }
 
   // DRAWS EVERYTHING
-  drawGame(ctx){
+  drawGame(ctx) {
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
 
     this.catFish.update(this.catFish.vel, ctx);
 
-    this.allFish.forEach((fish, idx) =>{
+    this.allFish.forEach((fish, idx) => {
       if (fish.pos[0] < -fish.width || fish.pos[0] > Game.DIM_X) {
-        this.allFish.splice(idx, 1)
+        this.allFish.splice(idx, 1);
       }
 
       if (fish.isCollidedWith(this.catFish)) {
         if (fish.height < this.catFish.height) {
           // plays a random sound
-          this.wow[this.randomInt(this.wow.length)].play()
+          this.wow[this.randomInt(this.wow.length)].play();
           this.catFish.height += 5;
           this.catFish.width += 5;
           this.allFish.splice(idx, 1);
         } else if (fish.height > this.catFish.height) {
           // window.alert("Game over!")
-          this.meow.play()
+          this.meow.play();
           this.gameOver();
-          alert("You lost! Refresh the page to play again.")
+          // alert("You lost! Refresh the page to play again.")
         }
       }
 
-
       // draws each fish
-      this.allFish[idx].update(1, ctx)
-
-
-    })
-    this.allFish[this.allFish.length-1].update(0, ctx)
-    this.wrap(this.catFish)
-    if(this.catFish.height > 300){
-      alert("Victory! You've become more powerful than anyone could imagine. Refresh page to replay.")
+      this.allFish[idx].update(1, ctx);
+    });
+    this.allFish[this.allFish.length - 1].update(0, ctx);
+    this.wrap(this.catFish);
+    if (this.catFish.height > 300) {
+      alert(
+        "Victory! You've become more powerful than anyone could imagine. Refresh page to replay."
+      );
       this.gameOver();
     }
 
@@ -83,28 +93,27 @@ class Game {
   }
 
   // GIVES FISH A RANDOM POSITION
-  randomize(fish){
+  randomize(fish) {
     let random_y = Math.random() * (Game.DIM_Y - fish.rad);
     let num = Math.random();
 
     // for squares
-    fish.height = this.catFish.height * 0.3 + (this.catFish.height * .8 * num)
-    fish.width = this.catFish.width * 0.3 + (this.catFish.width * .8 * num)
+    fish.height = this.catFish.height * 0.3 + this.catFish.height * 0.8 * num;
+    fish.width = this.catFish.width * 0.3 + this.catFish.width * 0.8 * num;
 
     // for circles
-    fish.radius = fish.radius * 0.25 + (fish.radius * 0.75 * num)
+    fish.radius = fish.radius * 0.25 + fish.radius * 0.75 * num;
 
     switch (Math.round(Math.random())) {
-
       case 0:
-      //left
+        //left
         fish.pos = [0 - fish.width, random_y];
         fish.vel = Math.abs(fish.vel);
-        fish.fish_pic.src = "assets/BulletCatFaceRight.png"
+        fish.fish_pic.src = "assets/BulletCatFaceRight.png";
         return fish;
 
       case 1:
-      //right
+        //right
         fish.pos = [Game.DIM_X, random_y];
         fish.vel = -fish.vel;
         return fish;
@@ -118,40 +127,39 @@ class Game {
     // randomize end
   }
 
-  wrap(fish){
+  wrap(fish) {
     if (fish.pos[0] < -fish.width) {
-      fish.pos[0] = Game.DIM_X
-    } else if (fish.pos[0] > Game.DIM_X - 1 ){
-      fish.pos[0] = -fish.width
-    } else if (fish.pos[1] < -fish.height){
-      fish.pos[1] = Game.DIM_Y
-    } else if (fish.pos[1] > Game.DIM_Y){
-      fish.pos[1] = -fish.height
+      fish.pos[0] = Game.DIM_X;
+    } else if (fish.pos[0] > Game.DIM_X - 1) {
+      fish.pos[0] = -fish.width;
+    } else if (fish.pos[1] < -fish.height) {
+      fish.pos[1] = Game.DIM_Y;
+    } else if (fish.pos[1] > Game.DIM_Y) {
+      fish.pos[1] = -fish.height;
     }
   }
 
-  gameOver(){
-    this.lost = true
+  gameOver() {
+    this.lost = true;
   }
 
-  randomInt(max){
+  randomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  momentum(fish){
+  momentum(fish) {
     if (fish.vel[0] !== 0 && fish.vel[0] > 0) {
-      fish.vel[0] -= 0.5
+      fish.vel[0] -= 0.5;
     } else if (fish.vel[0] !== 0 && fish.vel[0] < 0) {
-      fish.vel[0] += 0.5
+      fish.vel[0] += 0.5;
     } else if (fish.vel[1] !== 0 && fish.vel[1] < 0) {
-      fish.vel[1] += 0.5
+      fish.vel[1] += 0.5;
     } else if (fish.vel[1] !== 0 && fish.vel[1] > 0) {
-      fish.vel[1] -= 0.5
+      fish.vel[1] -= 0.5;
     } // else {
     //   this.purr.play()
     // }
     // console.log("momentum")
-
   }
 
   // class end
@@ -168,7 +176,7 @@ Game.CATFISH = {
   rad: 25,
   height: 100,
   width: 50
-}
+};
 
 Game.OTHERFISH = {
   pos: [400, 400],
@@ -176,23 +184,21 @@ Game.OTHERFISH = {
   rad: 25,
   height: 50,
   width: 50
-}
+};
 
 Game.WOW1 = new Audio("assets/WowMeow.mov");
-Game.WOW1.volume = 0.40;
+Game.WOW1.volume = 0.4;
 
 Game.WOW2 = new Audio("assets/WowMeow2.mov");
-Game.WOW2.volume = 0.40;
+Game.WOW2.volume = 0.4;
 
 Game.WOW3 = new Audio("assets/WowMeow3.mov");
-Game.WOW3.volume = 0.40;
+Game.WOW3.volume = 0.4;
 
 Game.MEOW = new Audio("assets/OneSecMeow.mov");
 Game.MEOW.volume = 0.35;
 
 Game.PURR = new Audio("assets/Purr.mov");
 Game.PURR.volume = 0.35;
-
-
 
 export default Game;

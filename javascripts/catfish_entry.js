@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const c = canvas.getContext("2d");
   // const cLeft = canvasLeft.getContext('2d');
   // const cRight = canvasRight.getContext('2d');
+
+  // START BUTTON
   const start = document.getElementById("start");
 
   // GRAB THE HIGH SCORE CONTAINER
@@ -27,10 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function addScore(scores, newScore, scoreContainer = scoreTracker) {
     scores.push(newScore);
     let sortedScores = scores.sort();
-    sortedScores.forEach(score => {
+    if (sortedScores.length > 5) {
+      sortedScores.pop();
+    }
+    sortedScores.forEach((score, i) => {
       const newScoreLi = document.createElement("li");
       newScoreLi.classList.add("score");
-      newScoreLi.innerHTML = score;
+      newScoreLi.innerHTML = `${i + 1}. ${score}`;
       scoreContainer.appendChild(newScoreLi);
     });
   }
@@ -46,8 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animate();
     clock.timer();
+
+    // DISABLES START BUTTON
     start.classList.add("hideStart");
+
     scoreTracker.innerHTML = "Top Scores";
+    addScore(highScores, clock.time);
   }
 
   start.addEventListener("click", gameStart);
@@ -67,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // addScore(clock.time);
       clearInterval(game.waves);
       clearInterval(game.moment);
-      addScore(highScores, clock.time);
+      // addScore(highScores, clock.time);
+      game.reset();
+      start.classList.remove("hideStart");
     }
   }
 });
