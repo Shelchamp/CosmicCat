@@ -3,9 +3,40 @@
 class Timer {
   constructor() {
     this.time = "00:00";
+
+    // This instance variable helps us when we reset the game
     this.stop = false;
   }
 
+  startTime() {
+    // Reset time to zero
+    this.time = "00:00";
+
+    // Let the timer move
+    this.stop = false;
+
+    // Set seconds counter to zero
+    let seconds = 0;
+    const timer = setInterval(() => {
+      seconds++;
+      this.time = this.secConvert(seconds);
+      if (this.stop) {
+        // This stops our timer
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
+
+  stopTime() {
+    this.stop = true;
+  }
+
+  reset() {
+    this.time = "00:00";
+    this.stop = false;
+  }
+
+  // THIS FUNCTION CONVERTS SECONDS INTO DIGITAL TIME DISPLAY
   secConvert(secs) {
     // First determine the number of minutes, then take the remaing seconds
 
@@ -34,23 +65,8 @@ class Timer {
 
     return minStr + ":" + secStr;
   }
-
-  timer(gameOver = false) {
-    let seconds = 0;
-    let over = gameOver;
-    const timer = setInterval(() => {
-      seconds++;
-      this.time = this.secConvert(seconds);
-      if (this.stop) {
-        clearInterval(timer);
-      }
-    }, 1000);
-  }
-
-  stopTime() {
-    this.stop = true;
-  }
 }
+
 // TESTING
 
 // let clock = new Timer();
