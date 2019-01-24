@@ -97,9 +97,9 @@ class Game {
     let random_y = Math.random() * (Game.DIM_Y - fish.rad);
     let num = Math.random();
 
-    // for squares
-    fish.height = this.catFish.height * 0.3 + this.catFish.height * 0.8 * num;
-    fish.width = this.catFish.width * 0.3 + this.catFish.width * 0.8 * num;
+    // for squares - 0.3 is working. 0.8 for testing
+    fish.height = this.catFish.height * 0.8 + this.catFish.height * 0.8 * num;
+    fish.width = this.catFish.width * 0.8 + this.catFish.width * 0.8 * num;
 
     // for circles
     fish.radius = fish.radius * 0.25 + fish.radius * 0.75 * num;

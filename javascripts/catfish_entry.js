@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const timer = document.getElementById("timer");
 
   // HOLD HIGH SCORES
-  let highScores = ["00:56", "01:25", "00:15", "03:16"];
+  let highScores = [];
 
   // LOGIC TO ADD SCORES
   function addScore(scores, newScore, scoreContainer = scoreTracker) {
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sortedScores.length > 5) {
       sortedScores.pop();
     }
+    scoreContainer.innerHTML = "Top Scores";
     sortedScores.forEach((score, i) => {
       const newScoreLi = document.createElement("li");
       newScoreLi.classList.add("score");
@@ -39,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       scoreContainer.appendChild(newScoreLi);
     });
   }
+
+  let notFirst = true;
 
   function gameStart() {
     game.waves = setInterval(() => {
@@ -55,8 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // DISABLES START BUTTON
     start.classList.add("hideStart");
 
-    scoreTracker.innerHTML = "Top Scores";
-    addScore(highScores, clock.time);
+    // scoreTracker.innerHTML = "Top Scores";
+    // if (!notFirst) {
+    //   addScore(highScores, clock.time);
+    //   // console.log(notFirst);
+    // } else {
+    //   notFirst = false;
+    // }
   }
 
   start.addEventListener("click", gameStart);
@@ -72,13 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(animate);
       game.drawGame(c);
     } else {
-      clock.stop = true;
+      clock.stopTime();
+      start.classList.remove("hideStart");
       // addScore(clock.time);
       clearInterval(game.waves);
       clearInterval(game.moment);
-      // addScore(highScores, clock.time);
+      addScore(highScores, clock.time);
       game.reset();
-      start.classList.remove("hideStart");
     }
   }
 });

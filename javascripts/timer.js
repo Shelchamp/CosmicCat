@@ -46,6 +46,10 @@ class Timer {
       }
     }, 1000);
   }
+
+  stopTime() {
+    this.stop = true;
+  }
 }
 // TESTING
 
