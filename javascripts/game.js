@@ -4,7 +4,6 @@ import CatFish from "./cat_fish";
 
 class Game {
   constructor() {
-    this.lost = false;
     this.allFish = [];
     this.catFish = new CatFish(Game.CATFISH);
     this.wow = [Game.WOW1, Game.WOW2, Game.WOW3];
@@ -12,6 +11,10 @@ class Game {
     this.purr = Game.PURR;
     this.waves = null;
     this.moment = null;
+
+    // NEED TO DETERMINE A WIN VS LOSE
+    this.won = false;
+    this.over = false;
 
     // CREATES FIRST BATCH OF FISH
     for (let i = 0; i < Game.NUM_FISH; i++) {
@@ -26,7 +29,8 @@ class Game {
   }
 
   reset() {
-    this.lost = false;
+    this.over = false;
+    this.won = false;
     this.allFish = [];
     this.catFish = new CatFish(Game.CATFISH);
     this.wow = [Game.WOW1, Game.WOW2, Game.WOW3];
@@ -61,18 +65,26 @@ class Game {
         this.allFish.splice(idx, 1);
       }
 
+      // This line deals with collisions
       if (fish.isCollidedWith(this.catFish)) {
+        // If the enemy is smaller
+
         if (fish.height < this.catFish.height) {
-          // plays a random sound
+          // Plays a random sound
           this.wow[this.randomInt(this.wow.length)].play();
+          // Increase size of cat
           this.catFish.height += 5;
           this.catFish.width += 5;
           this.allFish.splice(idx, 1);
+
+          // If enemy is larger
         } else if (fish.height > this.catFish.height) {
-          // window.alert("Game over!")
+          // Gameover sound
           this.meow.play();
-          this.gameOver();
-          // alert("You lost! Refresh the page to play again.")
+
+          //Gameover logic
+          this.gameWon(false);
+          alert("You lost!");
         }
       }
 
@@ -81,14 +93,16 @@ class Game {
     });
     this.allFish[this.allFish.length - 1].update(0, ctx);
     this.wrap(this.catFish);
+
+    // This logic deals with winning
     if (this.catFish.height > 300) {
+      // If the player reaches a certain size
+      this.gameWon(true);
       alert(
-        "Victory! You've become more powerful than anyone could imagine. Refresh page to replay."
+        "Victory! You've become more powerful than anyone could imagine. An absolute unit."
       );
-      this.gameOver();
     }
 
-    // console.log(this.catFish.vel)
     // drawGame end
   }
 
@@ -97,9 +111,9 @@ class Game {
     let random_y = Math.random() * (Game.DIM_Y - fish.rad);
     let num = Math.random();
 
-    // for squares - 0.3 is working. 0.8 for testing
-    fish.height = this.catFish.height * 0.8 + this.catFish.height * 0.8 * num;
-    fish.width = this.catFish.width * 0.8 + this.catFish.width * 0.8 * num;
+    // for squares - 0.4 is working. 0.8 for testing
+    fish.height = this.catFish.height * 0.4 + this.catFish.height * 0.8 * num;
+    fish.width = this.catFish.width * 0.4 + this.catFish.width * 0.8 * num;
 
     // for circles
     fish.radius = fish.radius * 0.25 + fish.radius * 0.75 * num;
@@ -139,8 +153,9 @@ class Game {
     }
   }
 
-  gameOver() {
-    this.lost = true;
+  gameWon(won) {
+    this.over = true;
+    this.won = won;
   }
 
   randomInt(max) {

@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   timer.innerHTML = clock.time;
 
   function animate() {
-    if (game.lost === false) {
+    if (!game.over) {
       // Draws the time
       timer.innerHTML = clock.time;
       requestAnimationFrame(animate);
@@ -93,8 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(game.waves);
       clearInterval(game.moment);
 
-      // Add current score to high scores
-      addScore(highScores, clock.time);
+      // Add current score to high scores if you won
+      if (game.won) {
+        addScore(highScores, clock.time);
+      }
 
       // Reset the game
       game.reset();
