@@ -111,7 +111,7 @@ li {
 .title-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* background: rgba(108, 128, 145, 1) url("https://i.imgur.com/lc3m5TQ.gif"); */
 }
 
@@ -119,6 +119,7 @@ li {
   color: rgb(228, 238, 26);
   text-shadow: 0 0 3px #4aff00, 0 0 5px #ff1700;
   font-family: "Varela Round", sans-serif;
+  margin: 10px 0px 10px 0px;
 }
 
 #links {
@@ -128,7 +129,7 @@ li {
   align-items: center;
   margin: 35px 0px 0px 0px;
   padding: 0;
-  height: 100px;
+  height: 65px;
 }
 
 .dir-bullets {
