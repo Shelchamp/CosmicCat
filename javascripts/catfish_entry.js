@@ -67,7 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
     clock.startTime();
 
     // DISABLES START BUTTON
-    start.classList.add("hideStart");
+    start.classList.add("hide");
+
+    const timeCon = document.getElementsByClassName("timer-container")[0];
+
+    // console.log(timeCon.childNodes);
+
+    while (timeCon.childNodes.length > 7) {
+      timeCon.removeChild(timeCon.childNodes[7]);
+    }
   }
 
   // ADD EVENT LISTENERS FOR START BUTTON
@@ -100,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clock.stopTime();
 
       // Make Start button visiable again
-      start.classList.remove("hideStart");
+      start.classList.remove("hide");
 
       // Stop spawning enemies and stop game physics
       clearInterval(game.waves);
@@ -117,4 +125,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // ANIMATE END
   }
   // TEST//
+  // game.gameOver();
+
+  // function removeEl() {
+  // const timeCon = document.getElementsByClassName("timer-container")[0];
+  // timeCon.removeChild(timeCon.childNodes[7]);
+  // }
+
+  // createEl();
+
+  // window.setTimeout(() => {
+  //   removeEl();
+  // }, 2000);
 });

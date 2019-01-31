@@ -86,7 +86,7 @@ class Game {
 
           //Gameover logic
           this.gameWon(false);
-          alert("You lost!");
+          // alert("You lost!");
         }
       }
 
@@ -113,9 +113,9 @@ class Game {
     let random_y = Math.random() * (Game.DIM_Y - fish.rad);
     let num = Math.random();
 
-    // for squares - 0.3 is working. 0.8 for testing
-    fish.height = this.catFish.height * 0.31 + this.catFish.height * 0.8 * num;
-    fish.width = this.catFish.width * 0.31 + this.catFish.width * 0.8 * num;
+    // for squares - 0.31 is working. 0.8 for testing
+    fish.height = this.catFish.height * 0.32 + this.catFish.height * 0.8 * num;
+    fish.width = this.catFish.width * 0.32 + this.catFish.width * 0.8 * num;
 
     // for circles
     fish.radius = fish.radius * 0.25 + fish.radius * 0.75 * num;
@@ -159,6 +159,25 @@ class Game {
     this.over = true;
     this.started = false;
     this.won = won;
+    this.gameOver();
+  }
+
+  gameOver() {
+    const gameOver = document.createElement("div");
+
+    gameOver.classList.add("gameover");
+    gameOver.classList.add("fade-in");
+    gameOver.classList.add("cat");
+    const timeCon = document.getElementsByClassName("timer-container")[0];
+    timeCon.appendChild(gameOver);
+    window.setTimeout(() => {
+      gameOver.classList.remove("cat");
+      const gameOverText = document.createElement("h1");
+      gameOverText.innerHTML = "Game Over! Hit SPACE to play again";
+      gameOverText.classList.add("gameover-text");
+      gameOver.appendChild(gameOverText);
+    }, 6300);
+    // console.log(timeCon.childNodes.length);
   }
 
   randomInt(max) {

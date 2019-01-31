@@ -51,7 +51,7 @@ html {
   /* height: 100vh; */
 }
 
-.hideStart {
+.hide {
   visibility: hidden;
 }
 
@@ -156,4 +156,70 @@ li {
   color: rgb(228, 238, 26);
   text-shadow: 0 0 3px #4aff00, 0 0 5px #ff1700;
   font-family: "Varela Round", sans-serif;
+}
+
+.gameover {
+  position: fixed;
+  width: 825px;
+  height: 600px;
+  background-color: black;
+}
+
+.gameover-text {
+  color: rgb(228, 238, 26);
+  text-shadow: 0 0 45px #4aff00, 0 0 75px #ff1700;
+  font-family: "Varela Round", sans-serif;
+  margin: 60px 30px 30px 30px;
+  font-size: 120px;
+  text-align: center;
+}
+
+.cat {
+  background-image: url("https://i.imgur.com/kb1cLUR.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.fade-in {
+  -webkit-animation: fade-in 1s ease;
+  -moz-animation: fade-in ease-in-out 1s both;
+  -ms-animation: fade-in ease-in-out 1s both;
+  -o-animation: fade-in ease-in-out 1s both;
+  animation: fade-in 1s ease;
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
