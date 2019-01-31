@@ -125,16 +125,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // ANIMATE END
   }
   // TEST//
-  // game.gameOver();
-
-  // function removeEl() {
-  // const timeCon = document.getElementsByClassName("timer-container")[0];
-  // timeCon.removeChild(timeCon.childNodes[7]);
-  // }
-
-  // createEl();
-
-  // window.setTimeout(() => {
-  //   removeEl();
-  // }, 2000);
 });

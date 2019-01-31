@@ -100,9 +100,9 @@ class Game {
     if (this.catFish.height > 300) {
       // If the player reaches a certain size
       this.gameWon(true);
-      alert(
-        "Victory! You've become more powerful than anyone could imagine. An absolute unit."
-      );
+      // alert(
+      //   "Victory! You've become more powerful than anyone could imagine. An absolute unit."
+      // );
     }
 
     // drawGame end
@@ -114,8 +114,8 @@ class Game {
     let num = Math.random();
 
     // for squares - 0.31 is working. 0.8 for testing
-    fish.height = this.catFish.height * 0.32 + this.catFish.height * 0.8 * num;
-    fish.width = this.catFish.width * 0.32 + this.catFish.width * 0.8 * num;
+    fish.height = this.catFish.height * 0.31 + this.catFish.height * 0.8 * num;
+    fish.width = this.catFish.width * 0.31 + this.catFish.width * 0.8 * num;
 
     // for circles
     fish.radius = fish.radius * 0.25 + fish.radius * 0.75 * num;
@@ -164,19 +164,33 @@ class Game {
 
   gameOver() {
     const gameOver = document.createElement("div");
-
     gameOver.classList.add("gameover");
     gameOver.classList.add("fade-in");
-    gameOver.classList.add("cat");
     const timeCon = document.getElementsByClassName("timer-container")[0];
     timeCon.appendChild(gameOver);
-    window.setTimeout(() => {
-      gameOver.classList.remove("cat");
+    if (this.won) {
+      // IF WON
+      gameOver.classList.add("win-cat");
+      // gameOver.classList.remove("win-cat");
       const gameOverText = document.createElement("h1");
-      gameOverText.innerHTML = "Game Over! Hit SPACE to play again";
-      gameOverText.classList.add("gameover-text");
+      gameOverText.classList.add("gamewinner-text");
       gameOver.appendChild(gameOverText);
-    }, 6300);
+      window.setTimeout(() => {
+        gameOverText.innerHTML = "You win! Press SPACE to play again";
+      }, 2500);
+    } else {
+      // IF LOST
+      gameOver.classList.add("lose-cat");
+      window.setTimeout(() => {
+        gameOver.classList.remove("lose-cat");
+        gameOver.classList.add("lose-cat-still");
+        const gameOverText = document.createElement("h1");
+        gameOverText.innerHTML = "Game Over! Hit SPACE to play again";
+        gameOverText.classList.add("gameover-text");
+        gameOver.appendChild(gameOverText);
+      }, 6300);
+    }
+
     // console.log(timeCon.childNodes.length);
   }
 
