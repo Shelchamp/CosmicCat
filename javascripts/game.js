@@ -97,7 +97,7 @@ class Game {
     this.wrap(this.catFish);
 
     // This logic deals with winning
-    if (this.catFish.height > 300) {
+    if (this.catFish.height > 275) {
       // If the player reaches a certain size
       this.gameWon(true);
       // alert(
