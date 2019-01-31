@@ -170,28 +170,36 @@ class Game {
     timeCon.appendChild(gameOver);
     if (this.won) {
       // IF WON
+
+      // Add bowing cat picture
       gameOver.classList.add("win-cat");
-      // gameOver.classList.remove("win-cat");
-      const gameOverText = document.createElement("h1");
-      gameOverText.classList.add("gamewinner-text");
-      gameOver.appendChild(gameOverText);
       window.setTimeout(() => {
+        // Add winning text
+        const gameOverText = document.createElement("h1");
+        gameOverText.classList.add("gamewinner-text");
+        gameOver.appendChild(gameOverText);
         gameOverText.innerHTML = "You win! Press SPACE to play again";
       }, 2500);
     } else {
       // IF LOST
+
+      // Add GIF of trippin' cat
       gameOver.classList.add("lose-cat");
+
       window.setTimeout(() => {
-        gameOver.classList.remove("lose-cat");
-        gameOver.classList.add("lose-cat-still");
+        // Add text after a few seconds
         const gameOverText = document.createElement("h1");
         gameOverText.innerHTML = "Game Over! Hit SPACE to play again";
         gameOverText.classList.add("gameover-text");
         gameOver.appendChild(gameOverText);
+      }, 2750);
+
+      window.setTimeout(() => {
+        // Remove trippin' cat and add typing cat
+        gameOver.classList.remove("lose-cat");
+        gameOver.classList.add("lose-cat-still");
       }, 6300);
     }
-
-    // console.log(timeCon.childNodes.length);
   }
 
   randomInt(max) {
