@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log(timeCon.childNodes);
 
     while (timeCon.childNodes.length > 7) {
-      timeCon.removeChild(timeCon.childNodes[7]);
+      timeCon.removeChild(timeCon.childNodes[timeCon.childNodes.length - 1]);
     }
   }
 
