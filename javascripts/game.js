@@ -179,7 +179,7 @@ class Game {
         gameOverText.classList.add("gamewinner-text");
         gameOver.appendChild(gameOverText);
         gameOverText.innerHTML = "You win! Press SPACE to play again";
-      }, 2500);
+      }, 4050);
     } else {
       // IF LOST
 
