@@ -15,6 +15,7 @@ class Game {
     // NEED TO DETERMINE A WIN VS LOSE
     this.won = false;
     this.over = false;
+    this.started = false;
 
     // CREATES FIRST BATCH OF FISH
     for (let i = 0; i < Game.NUM_FISH; i++) {
@@ -38,6 +39,7 @@ class Game {
     this.purr = Game.PURR;
     this.waves = null;
     this.moment = null;
+    this.started = false;
 
     for (let i = 0; i < Game.NUM_FISH; i++) {
       this.addFish();
@@ -111,9 +113,9 @@ class Game {
     let random_y = Math.random() * (Game.DIM_Y - fish.rad);
     let num = Math.random();
 
-    // for squares - 0.4 is working. 0.8 for testing
-    fish.height = this.catFish.height * 0.4 + this.catFish.height * 0.8 * num;
-    fish.width = this.catFish.width * 0.4 + this.catFish.width * 0.8 * num;
+    // for squares - 0.3 is working. 0.8 for testing
+    fish.height = this.catFish.height * 0.31 + this.catFish.height * 0.8 * num;
+    fish.width = this.catFish.width * 0.31 + this.catFish.width * 0.8 * num;
 
     // for circles
     fish.radius = fish.radius * 0.25 + fish.radius * 0.75 * num;
@@ -155,6 +157,7 @@ class Game {
 
   gameWon(won) {
     this.over = true;
+    this.started = false;
     this.won = won;
   }
 

@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // GAME START FUNCTION
   function gameStart() {
     // Add enemies
+    game.started = true;
     game.waves = setInterval(() => {
       game.addFish();
     }, 1000);
@@ -69,6 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
     start.classList.add("hideStart");
   }
 
+  // ADD EVENT LISTENERS FOR START BUTTON
+
+  // Hitting SPACE will start the game
+  window.addEventListener("keydown", event => {
+    let code = event.code;
+    // Only let SPACE start the game if it hasn't already begun
+    if (code === "Space" && !game.started) {
+      gameStart();
+    }
+  });
+
+  // Clicking on the button will start the game
   start.addEventListener("click", gameStart);
 
   // Create a clock that is hoisted above
@@ -101,5 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reset the game
       game.reset();
     }
+    // ANIMATE END
   }
+  // TEST//
 });
