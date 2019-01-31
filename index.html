@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>CatFish</title>
-    <link rel='shortcut icon' href='./assets/InBreadCat.png' type='icon/x-icon' />
+    <link
+      rel="shortcut icon"
+      href="./assets/InBreadCat.png"
+      type="icon/x-icon"
+    />
     <link rel="stylesheet" href="./stylesheets/game.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Varela+Round"
@@ -17,12 +21,12 @@
       <header class="title-container"><h1 class="title">Cat Fish</h1></header>
       <!-- LINKS NAVBAR -->
     </div>
-    
+
     <!-- TIMER HERE -->
-    <div class='timer-container'>
-        <!-- GAME OVER SCREEN -->
-        <!-- <div class='gameover fade-in'></div>    -->
-        <h2 id="timer" class='title'> </h2>
+    <div class="timer-container">
+      <!-- GAME OVER SCREEN -->
+      <!-- <div class='gameover fade-in'></div>    -->
+      <h2 id="timer" class="title"></h2>
     </div>
     <div class="canvas-container">
       <!-- <canvas id="canny-left"  height="400" width="200"></canvas> -->
@@ -33,7 +37,9 @@
             <li class="dir-bullets">Press SPACE or click START to play</li>
             <li class="dir-bullets">Use WASD or arrow keys to move</li>
             <img src="assets/WASArrow.png" class="arrow-pic" />
-            <li class="dir-bullets">Eat smaller cats to gain strength and grow!</li>
+            <li class="dir-bullets">
+              Eat smaller cats to gain strength and grow!
+            </li>
             <li class="dir-bullets">Avoid getting eaten by the larger cats</li>
           </div>
         </ul>
@@ -42,7 +48,7 @@
       <canvas id="canny" class="start" height="400" width="700"></canvas>
       <!-- HIGH SCORES -->
       <div class="score-container">
-        <ul id='score' class="score">
+        <ul id="score" class="score">
           Top Scores
         </ul>
       </div>
@@ -53,12 +59,27 @@
     </div>
     <ul id="links">
       <a href="https://github.com/Shelchamp/CatFish" target="_blank">
-        <img src="assets/GitHub.png" alt="GitHub" width="50" height="50">
+        <img
+          src="assets/GitHub.png"
+          alt="GitHub"
+          width="50"
+          height="50"
+          class="link"
+        />
       </a>
-      <div id="divide">
-        <a href="https://www.linkedin.com/in/sheldon-chan" target="_blank">
-          <img src="assets/LinkedIn.png" alt="LinkedIn" width="50" height="50">
-        </a>
+      <a href="https://www.sheldonhimself.com" target="_blank" class="link-text"
+        >Made by Sheldon Chan
+      </a>
+      <!-- <div id="divide"> -->
+      <a href="https://www.linkedin.com/in/sheldon-chan" target="_blank">
+        <img
+          src="assets/LinkedIn.png"
+          alt="LinkedIn"
+          width="50"
+          height="50"
+          class="link"
+        />
+      </a>
     </ul>
     <script type="text/javascript" src="./bundle/bundle.js"></script>
     <script type="application/javascript" src="vendor/keymaster.js"></script>
