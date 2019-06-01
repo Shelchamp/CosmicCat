@@ -1,11 +1,12 @@
 # Cosmic Cat 
 
-[Cosmic Cat Live](https://shelchamp.github.io/CatFish/)
+[Cosmic Cat Live](https://shelchamp.github.io/CosmicCat/)
 
 
 
-![CatFish_game](https://i.imgur.com/WQQackH.png)
-![CatFish_game](https://i.imgur.com/6t8ENOq.png)
+
+![CosmicCat_game](https://i.imgur.com/ICrIbnu.png?1)
+![CosmicCat_game](https://i.imgur.com/kMNigpH.png?1)
 
 
 
