@@ -1,6 +1,6 @@
-# Cat Fish
+# Cosmic Cat 
 
-[Cat Fish Live](https://shelchamp.github.io/CatFish/)
+[Cosmic Cat Live](https://shelchamp.github.io/CatFish/)
 
 
 
@@ -12,7 +12,7 @@
 
 ### Background
 
-CatFish is a simple 1-player game. The player controls an In Bread Cat to eat smaller cats, growing larger each time. The In Bread Cat must also avoid getting eaten by larger cats. The goal of the game is to eat smaller cats until the In Bread Cat becomes massive.
+Cosmic Cat is a simple 1-player game. The player controls a Cosmic Cat to eat smaller cats, growing larger each time. The Cosmic Cat must also avoid getting eaten by larger cats. The goal of the game is to eat smaller cats until the Cosmic grows massive.
 
 
 ### Architecture and Technologies
@@ -26,16 +26,17 @@ This project uses:
 
 ### Functionality & MVP
 
-Within Cat Fish, users are able to:
+Within Cosmic Cat, users are able to:
 
 * Start the game
-* Move the In Bread Cat using the arrow keys and WASD
+* Move the Cosmic Cat using the arrow keys and WASD
 * Grow larger as they eat smaller cats
 
 
-### Cat Fish Movement
+### Cosmic Cat Movement
 
 * Cats are rendered using canvas. Cats are randomly generated with various sizes, starting positions, and velocity
+* Enemy cats scale with the Cosmic cat as it grows
 * User controls allow for multiple inputs
 * Player cat has a maximum speed and will eventually come to a halt if no buttons are pressed
 
@@ -51,12 +52,6 @@ Within Cat Fish, users are able to:
 Features that were not implemented:
 
 * Fix collision to be 100% visually accurate
-* Show high scores
-* Add a greater variety of sounds
-  * Play sound when cat reaches a particular size
-  * Have In Bread Cat purr when it is stationary
-* Allow users to Start and Restart game with button press
-* Draw Game Over screen
 * Mute audio
 * Add a variety of cat models
 * Let users pick from a number of cats to control
