@@ -1,20 +1,21 @@
 canvas {
   border: 4px groove rgb(114, 70, 222);
   display: block;
-  /* GREEN GRASS */
-  background-image: url("https://i.imgur.com/5wHwo73.png");
-}
-body {
-  margin: 0;
-}
-
-html {
-  /* background: url('https://i.imgur.com/EGdby9z.jpg') no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
-  /* BLUE STAR BACKGROUND */
-  background: url("https://i.imgur.com/lc3m5TQ.gif");
+  /* PLANET SPACE GIF */
+  background: url("https://i.imgur.com/AqM3njk.gif");
+    
+  }
+  body {
+    margin: 0;
+  }
+  
+  html {
+    /* background: url('https://i.imgur.com/EGdby9z.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    /* SPACE BACKGROUND */
+  background-image: url("https://i.imgur.com/pLN2BMx.png?1");
   /* background-size: cover; */
   min-height: 300px;
   min-width: 300px;
